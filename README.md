@@ -59,3 +59,46 @@ Transform your ideas into custom Lightning apps that extend CRM workflows direct
 
 This sprint covers Git version control, GitHub repository management,
 feature branches, commits, and pushing Salesforce project changes.
+## Git and Deployment Workflow
+
+This project follows a feature-branch development workflow.
+
+1. Create a feature branch from `main`.
+2. Make and test the required changes.
+3. Commit the changes with a meaningful commit message.
+4. Push the feature branch to GitHub.
+5. Create a Pull Request.
+6. Review the changes before merging.
+7. Merge the approved Pull Request into `main`.
+8. Pull the latest `main` branch before starting new work.
+
+### Salesforce Deployment
+
+Salesforce metadata is maintained in the Git repository.
+
+The general deployment flow is:
+
+Developer
+↓
+Feature Branch
+↓
+Pull Request
+↓
+Code Review
+↓
+main
+↓
+Salesforce Development/Test Org
+↓
+Testing
+↓
+Production
+
+Before deployment, verify:
+
+- Correct Salesforce org
+- Correct Git branch
+- Correct commit
+- Required metadata dependencies
+- Apex tests
+- Permissions and configuration
