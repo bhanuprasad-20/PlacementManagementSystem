@@ -185,3 +185,48 @@ UAT
 Production
 
 The exact deployment process may vary between organizations, but the main principle is controlled, tested, and reproducible deployment.
+## Sprint 39 – Deployment Exercise
+
+This sprint demonstrates a controlled Salesforce deployment workflow.
+
+### Deployment Process
+
+1. Create a feature branch.
+2. Make a meaningful project change.
+3. Commit the change to Git.
+4. Push the feature branch to GitHub.
+5. Create a Pull Request.
+6. Review and merge the Pull Request.
+7. Deploy Salesforce metadata to a development or test org.
+8. Run Apex tests.
+9. Verify the deployed feature manually.
+10. Document the deployment result.
+
+### Deployment Target
+
+For this exercise, the Salesforce Scratch Org is used as the development/test environment.
+
+Target org alias:
+
+`scratchOrg`
+
+The target org must always be verified before deployment.
+
+### Deployment Verification
+
+Before deployment:
+
+- Verify the Git branch.
+- Verify the Git commit.
+- Verify the Salesforce target org.
+- Review deployment metadata.
+- Check required dependencies.
+- Run appropriate tests.
+
+After deployment:
+
+- Confirm deployment success.
+- Run Apex tests.
+- Verify the feature in Salesforce.
+- Check for configuration or permission issues.
+- Document the result.
