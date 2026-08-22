@@ -102,3 +102,86 @@ Before deployment, verify:
 - Required metadata dependencies
 - Apex tests
 - Permissions and configuration
+## Sprint 38 – Salesforce Deployment Comparison
+
+Sprint 38 focuses on understanding the different approaches used to move Salesforce metadata between environments.
+
+### Deployment Approaches
+
+| Approach | Purpose |
+|---|---|
+| Changesets | Salesforce-native method for moving metadata between related Salesforce orgs |
+| Salesforce CLI | Developer-focused command-line workflow for retrieving and deploying metadata |
+| Metadata API | Programmatic mechanism for deploying and retrieving Salesforce metadata |
+| Scratch Orgs | Temporary source-driven environments for development and testing |
+| Sandboxes | Longer-lived environments used for development, testing, QA, and UAT |
+
+### Recommended Approach for the Placement Management System
+
+#### 1. Modern Git-Based Development
+
+**Preferred: Salesforce CLI + Git**
+
+Git stores the Salesforce metadata as source code, while Salesforce CLI is used to retrieve and deploy metadata.
+
+Workflow:
+
+Developer
+↓
+Feature Branch
+↓
+Git Commit
+↓
+Pull Request
+↓
+Code Review
+↓
+main
+↓
+Salesforce CLI
+↓
+Development / QA Org
+
+#### 2. Traditional Salesforce Deployment
+
+**Preferred: Changesets**
+
+Changesets are useful when an organization follows a traditional Salesforce administration-based deployment process and needs to move metadata between related Salesforce orgs.
+
+#### 3. Temporary Isolated Feature Development
+
+**Preferred: Scratch Orgs**
+
+Scratch Orgs are temporary Salesforce environments that can be created from source and project configuration.
+
+They are useful for isolated feature development and testing.
+
+#### 4. Testing Before Production
+
+**Preferred: Sandbox**
+
+A Sandbox provides a separate Salesforce environment where the application can be tested before changes are moved toward Production.
+
+### Deployment Decision
+
+For this Placement Management System, the preferred modern workflow is:
+
+Git
+↓
+Feature Branch
+↓
+Pull Request
+↓
+Code Review
+↓
+Salesforce CLI
+↓
+Development / Scratch Org
+↓
+QA Sandbox
+↓
+UAT
+↓
+Production
+
+The exact deployment process may vary between organizations, but the main principle is controlled, tested, and reproducible deployment.
