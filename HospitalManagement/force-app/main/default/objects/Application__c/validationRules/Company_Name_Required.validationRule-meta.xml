@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Company_Name_Required</fullName>
+    <active>true</active>
+    <description>Prevents saving an Application when Company Name is empty.</description>
+    <errorConditionFormula>ISBLANK(Company_Name__c)</errorConditionFormula>
+    <errorMessage>Company Name is required. Please enter the Company Name before saving the Application.</errorMessage>
+</ValidationRule>

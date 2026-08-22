@@ -1,0 +1,73 @@
+<template>
+
+    <lightning-card title="Student Profile">
+
+        <div class="slds-p-around_medium">
+
+            <lightning-input
+                label="Student Name"
+                value={studentName}
+                disabled>
+            </lightning-input>
+
+            <lightning-input
+                type="email"
+                label="Email"
+                value={email}
+                data-field="Email__c">
+            </lightning-input>
+
+            <lightning-input
+                type="tel"
+                label="Phone Number"
+                value={phone}
+                data-field="Phone_Number__c">
+            </lightning-input>
+
+            <lightning-input
+                label="Branch"
+                value={branch}
+                data-field="Branch__c">
+            </lightning-input>
+
+            <lightning-input
+                type="number"
+                label="CGPA"
+                value={cgpa}
+                data-field="CGPA__c">
+            </lightning-input>
+
+            <lightning-input
+                type="number"
+                label="Active Backlogs"
+                value={activeBacklogs}
+                data-field="Active_Backlogs__c">
+            </lightning-input>
+
+            <!-- Save Button -->
+            <div class="slds-m-top_medium">
+
+                <lightning-button
+                    label="Save"
+                    variant="brand"
+                    onclick={handleSave}>
+                </lightning-button>
+
+            </div>
+
+            <!-- Success / Error Message -->
+            <template if:true={message}>
+
+                <div class="slds-m-top_medium">
+
+                    <p>{message}</p>
+
+                </div>
+
+            </template>
+
+        </div>
+
+    </lightning-card>
+
+</template>

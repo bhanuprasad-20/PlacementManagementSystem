@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Child Component">
+
+        <div class="slds-p-around_medium">
+
+            <p>
+                Doctor Name from Parent:
+                <strong>{doctorName}</strong>
+            </p>
+
+            <br/>
+
+            <lightning-button
+                label="Send Message to Parent"
+                onclick={sendMessage}>
+            </lightning-button>
+
+        </div>
+
+    </lightning-card>
+</template>
